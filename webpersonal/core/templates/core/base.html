@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>App - {% block title %} {% endblock %}</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <!-- Cabecera y menu -->
+    <h1>MyApp</h1>
+    <ul>
+      <li><a href="/">Portada</a></li>
+      <li><a href="/about-me/">Acerca de</a></li>
+      <li><a href="/portfolio/">Portafolio</a></li>
+      <li><a href="/contact/">Contacto</a></li>
+    </ul>
+
+    <!-- Contenido -->
+
+    {% block content %} {% endblock %}
+
+    <script src="" async defer></script>
+  </body>
+</html>
