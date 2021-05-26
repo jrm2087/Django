@@ -2,9 +2,13 @@
 
 {% block title %} Portada {% endblock %}
 
-{% block content %}
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
 
-<h2>Portada</h2>
-<p>Esta es la portada ...</p>
 
-{% endblock %}
+{% block headers %}
+
+<h1>José D. Rodríguez</h1>
+<span class="subheading">Ingeniero de Sistemas</span>
+
+{% endblock  %}
+
