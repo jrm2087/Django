@@ -4,10 +4,11 @@ from django.views.generic.detail import DetailView
 from registration.models import Profile
 
 
-# Create your views here.
 class ProfileListView(ListView):
     model = Profile
     template_name = 'profiles/profile_list.html'
+    paginate_by = 3
+
 
 class ProfileDetailView(DetailView):
     model = Profile
