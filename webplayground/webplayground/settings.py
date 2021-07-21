@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'registration',
-    'profiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'core',
-    'pages.apps.PagesConfig'
+    'messenger',
+    'pages.apps.PagesConfig',
+    'profiles',
 ]
 
 MIDDLEWARE = [
