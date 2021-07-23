@@ -12,9 +12,26 @@ class Message(models.Model):
         ordering = ['created']
 
 
+class ThreadManager(models.Manager):
+    def find(self, user1, user2):
+        querySet = self.filter(users=user1).filter(users=user2)
+        if len(querySet) > 0:
+            return querySet[0]
+        return None
+
+    def find_or_create(self, user1, user2):
+        thread = self.find(user1, user2)
+        if thread is None:
+            thread = Thread.objects.create()
+            thread.users.add(user1, user2)
+        return thread
+
+
 class Thread(models.Model):
     users = models.ManyToManyField(User, related_name='threads')
     messages = models.ManyToManyField(Message)
+
+    objects = ThreadManager()
 
 
 def messages_changed(sender, **kwargs):
